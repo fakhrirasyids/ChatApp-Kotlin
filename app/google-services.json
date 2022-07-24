@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "451950299218",
+    "project_id": "simple-chat-app-86d6c",
+    "storage_bucket": "simple-chat-app-86d6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451950299218:android:c42b3210a1d747fc62778b",
+        "android_client_info": {
+          "package_name": "com.fakhrirasyids.simplechatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451950299218-do8flm6k366uu15p4mlltnmfr79ar1ts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeYAeI4yR4cRtQY7kQSwfvkpyWshLyvZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451950299218-do8flm6k366uu15p4mlltnmfr79ar1ts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

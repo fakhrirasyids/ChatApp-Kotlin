@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#5B8AC8</color>
+    <color name="primaryDark">#2E4F7C</color>
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#757575</color>
+    <color name="white">#FFFFFF</color>
+    <color name="inputBackground">#ECECEC</color>
+    <color name="iconBackground">#20FFFFFF</color>
+    <color name="error">#B00020</color>
+    <color name="receivedMessageBackground">#1C2E46</color>
+    <color name="onlineBackground">#008000</color>
+
+<!--    primaryDark before #1C2E46
+        receivedMessageBackground before #090D16
+-->
+</resources>
