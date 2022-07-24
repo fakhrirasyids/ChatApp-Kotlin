@@ -17,4 +17,4 @@ Simple Chat App built with Kotlin, developed using [Firebase FireStore](https://
 ## Todo
 - Fix some recyclerview in chat problems
 - Add Recent Chat feature
-= Add Notification
+- Add Notification
