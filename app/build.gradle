@@ -16,7 +16,7 @@ android {
         versionName "1.0"
         multiDexEnabled true
 
-        buildConfigField("String", "SERVER_KEY", '"YOUR SERVER KEY HERE"')
+        buildConfigField("String", "SERVER_KEY", '"YOUR SERVER KEY"')
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
