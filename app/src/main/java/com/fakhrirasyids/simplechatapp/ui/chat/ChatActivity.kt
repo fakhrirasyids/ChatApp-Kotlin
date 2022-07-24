@@ -271,7 +271,6 @@ private var chatMessages = ArrayList<ChatMessage>()
                         documentChange.document.getDate(Constants.KEY_TIMESTAMP)
 
                     chatMessages.add(chatMessage)
-                    showToast("Ini Cek Input: ${chatMessages.last().message}")
                 }
             }
             chatMessages.sortWith { obj1, obj2 ->
