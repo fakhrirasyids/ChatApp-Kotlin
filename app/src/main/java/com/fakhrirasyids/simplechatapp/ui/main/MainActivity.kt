@@ -1,11 +1,9 @@
 package com.fakhrirasyids.simplechatapp.ui.main
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
 import android.view.View
@@ -18,18 +16,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.fakhrirasyids.simplechatapp.databinding.ActivityMainBinding
-import com.fakhrirasyids.simplechatapp.listeners.ConversationsListener
 import com.fakhrirasyids.simplechatapp.listeners.UserListener
-import com.fakhrirasyids.simplechatapp.models.ChatMessage
 import com.fakhrirasyids.simplechatapp.models.User
-import com.fakhrirasyids.simplechatapp.ui.adapters.RecentConversationAdapter
 import com.fakhrirasyids.simplechatapp.ui.adapters.UsersAdapter
 import com.fakhrirasyids.simplechatapp.ui.base.BaseActivity
 import com.fakhrirasyids.simplechatapp.ui.chat.ChatActivity
 import com.fakhrirasyids.simplechatapp.ui.sign.SignInActivity
 import com.fakhrirasyids.simplechatapp.ui.viewmodels.MainViewModel
 import com.fakhrirasyids.simplechatapp.ui.viewmodels.MainViewModelFactory
-//import com.fakhrirasyids.simplechatapp.ui.users.UsersActivity
 import com.fakhrirasyids.simplechatapp.utils.Constants
 import com.fakhrirasyids.simplechatapp.utils.PreferenceManager
 import com.google.firebase.firestore.*
@@ -42,7 +36,7 @@ class MainActivity : BaseActivity() {
     private lateinit var mainViewModel: MainViewModel
 //    private lateinit var conversationsAdapter: RecentConversationAdapter
 
-//    private var conversations = ArrayList<ChatMessage>()
+    //    private var conversations = ArrayList<ChatMessage>()
     private val database: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,7 +73,7 @@ class MainActivity : BaseActivity() {
                         if (task.isSuccessful && task.result != null) {
                             val users = ArrayList<User>()
                             for (queryDocumentSnapshot: QueryDocumentSnapshot in task.result) {
-                                if (currentUserId.equals(queryDocumentSnapshot.id)) {
+                                if (currentUserId == queryDocumentSnapshot.id) {
                                     continue
                                 }
                                 val user = User()
@@ -97,7 +91,8 @@ class MainActivity : BaseActivity() {
 
                                 userAdapter.setUserListener(object : UserListener {
                                     override fun onUserClicked(user: User) {
-                                        val intent = Intent(this@MainActivity, ChatActivity::class.java)
+                                        val intent =
+                                            Intent(this@MainActivity, ChatActivity::class.java)
                                         intent.putExtra(Constants.KEY_USER, user)
                                         startActivity(intent)
                                         finish()

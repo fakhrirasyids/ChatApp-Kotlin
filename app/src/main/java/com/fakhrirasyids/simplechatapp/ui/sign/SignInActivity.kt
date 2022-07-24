@@ -32,9 +32,7 @@ class SignInActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val pref = PreferenceManager.getInstance(dataStore)
-        mainViewModel = ViewModelProvider(this, MainViewModelFactory(pref)).get(
-            MainViewModel::class.java
-        )
+        mainViewModel = ViewModelProvider(this, MainViewModelFactory(pref))[MainViewModel::class.java]
 
         mainViewModel.getBoolean(Constants.KEY_IS_SIGNED_IN).observe(this) {
             if (it) {
@@ -68,13 +66,15 @@ class SignInActivity : AppCompatActivity() {
             .get()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful && task.result != null && task.result.documents.size > 0) {
-                    val documentSnapshot: DocumentSnapshot = task.result.documents.get(0)
+                    val documentSnapshot: DocumentSnapshot = task.result.documents[0]
                     mainViewModel.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
                     mainViewModel.putString(Constants.KEY_USER_ID, documentSnapshot.id)
-                    mainViewModel.putString(Constants.KEY_NAME,
+                    mainViewModel.putString(
+                        Constants.KEY_NAME,
                         documentSnapshot.getString(Constants.KEY_NAME)!!
                     )
-                    mainViewModel.putString(Constants.KEY_IMAGE,
+                    mainViewModel.putString(
+                        Constants.KEY_IMAGE,
                         documentSnapshot.getString(Constants.KEY_IMAGE)!!
                     )
 
@@ -89,17 +89,17 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun isValidSignInDetails(): Boolean {
-        if (binding.inputEmail.text.toString().trim().isEmpty()) {
+        return if (binding.inputEmail.text.toString().trim().isEmpty()) {
             showToast("Enter email")
-            return false
+            false
         } else if (!Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.text.toString()).matches()) {
             showToast("Enter valid email")
-            return false
+            false
         } else if (binding.inputPassword.text.toString().trim().isEmpty()) {
             showToast("Enter password")
-            return false
+            false
         } else {
-            return true
+            true
         }
     }
 

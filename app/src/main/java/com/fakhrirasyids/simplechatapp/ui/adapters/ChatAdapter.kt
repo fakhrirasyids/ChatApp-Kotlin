@@ -3,13 +3,10 @@ package com.fakhrirasyids.simplechatapp.ui.adapters
 import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.fakhrirasyids.simplechatapp.databinding.ActivityChatBinding
 import com.fakhrirasyids.simplechatapp.databinding.ItemReceivedMessageContainerBinding
 import com.fakhrirasyids.simplechatapp.databinding.ItemSentMessageContainerBinding
 import com.fakhrirasyids.simplechatapp.models.ChatMessage
-import com.fakhrirasyids.simplechatapp.ui.chat.ChatActivity
 
 class ChatAdapter(
     private var chatMessages: List<ChatMessage>,

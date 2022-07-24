@@ -69,9 +69,7 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val pref = PreferenceManager.getInstance(dataStore)
-        mainViewModel = ViewModelProvider(this, MainViewModelFactory(pref)).get(
-            MainViewModel::class.java
-        )
+        mainViewModel = ViewModelProvider(this, MainViewModelFactory(pref))[MainViewModel::class.java]
 
         setListeners()
     }
@@ -122,11 +120,11 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun encodeImage(bitmap: Bitmap): String {
-        val previewWidth: Int = 150
+        val previewWidth = 150
         val previewHeight: Int = bitmap.height * previewWidth / bitmap.width
         val previewBitmap: Bitmap =
             Bitmap.createScaledBitmap(bitmap, previewWidth, previewHeight, false)
-        val byteArrayOutputStream: ByteArrayOutputStream = ByteArrayOutputStream()
+        val byteArrayOutputStream = ByteArrayOutputStream()
         previewBitmap.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream)
         val bytes: ByteArray = byteArrayOutputStream.toByteArray()
         return Base64.encodeToString(bytes, Base64.DEFAULT)

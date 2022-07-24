@@ -8,7 +8,6 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64
 import android.view.View
-import android.widget.Toast
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -20,7 +19,6 @@ import com.fakhrirasyids.simplechatapp.R
 import com.fakhrirasyids.simplechatapp.databinding.ActivityChatBinding
 import com.fakhrirasyids.simplechatapp.models.ChatMessage
 import com.fakhrirasyids.simplechatapp.models.User
-import com.fakhrirasyids.simplechatapp.network.ApiConfig
 import com.fakhrirasyids.simplechatapp.ui.adapters.ChatAdapter
 import com.fakhrirasyids.simplechatapp.ui.base.BaseActivity
 import com.fakhrirasyids.simplechatapp.ui.main.MainActivity
@@ -30,12 +28,6 @@ import com.fakhrirasyids.simplechatapp.utils.Constants
 import com.fakhrirasyids.simplechatapp.utils.PreferenceManager
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.EventListener
-import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
-import retrofit2.Call
-import retrofit2.Response
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -51,8 +43,8 @@ class ChatActivity : BaseActivity() {
 
     // FOR RECENT CONVERSATION
 
-//    private var conversationId: String? = null
-private var chatMessages = ArrayList<ChatMessage>()
+    //    private var conversationId: String? = null
+    private var chatMessages = ArrayList<ChatMessage>()
     private var isReceiverAvailable: Boolean = false
     private val database: FirebaseFirestore = FirebaseFirestore.getInstance()
 
@@ -206,9 +198,9 @@ private var chatMessages = ArrayList<ChatMessage>()
         }
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
+//    private fun showToast(message: String) {
+//        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+//    }
 
     // FOR NOTIFICATION
 
