@@ -5,6 +5,7 @@ Simple Chat App built with Kotlin, developed using [Firebase FireStore](https://
 ## Features
 
 - Chat database with [Firebase FireStore](https://firebase.google.com/products/firestore)
+- Get latest login information with [Preferences Datastore](https://developer.android.com/topic/libraries/architecture/datastore?hl=id)
 - Implementing MVVM Architecture
 - Check the availability of the user (online or offline)
 
