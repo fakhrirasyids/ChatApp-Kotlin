@@ -16,6 +16,5 @@ Simple Chat App built with Kotlin, developed using [Firebase FireStore](https://
 | ![](images/4.jpg)  | ![](images/5.jpg) | ![](images/6.jpg)  |
 
 ## Todo
-- Fix some recyclerview in chat problems
 - Add Recent Chat feature
 - Add Notification
